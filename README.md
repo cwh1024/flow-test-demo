@@ -67,8 +67,8 @@ GitHub 仓库地址：https://github.com/cwh1024/flow-test-demo
 
 - 文件检查：通过。仓库仅包含 `README.md` 与 `hello.py`，均为 UTF-8 编码；无第三方依赖、无锁文件、无 `.env`、私钥、证书或明显令牌。
 - 运行检查：未验证。本机未安装可用的 Python 解释器，无法执行 `python hello.py` 或语法编译检查。
-- 网络推送：本机直连 `github.com` 的 HTTPS 连接被重置，`git push` 未成功；本次源码通过 GitHub API 提交到远程 `main` 分支。
+- 网络推送：已配置 SSH（`ssh.github.com:443`，仓库级部署密钥）并成功执行 `git push`；本机直连 `github.com` 的 HTTPS 连接仍不可用。
 
 验收方法：打开仓库应能看到 `README.md` 和 `hello.py`。在装有 Python 3 的电脑上运行 `python hello.py`，预期输出 `Hello, GitHub! 试着修改这一行，然后提交一个 PR。`。也可以按上方“5 分钟完整走一遍”新建分支、修改文件并合并一个测试 PR。
 
-交付状态：完整源码已提交到上述仓库的 `main` 分支（本次通过 GitHub API 提交，未使用 `git push`）。
+交付状态：完整源码已提交到上述仓库的 `main` 分支，并通过 SSH 完成 `git push`。
